@@ -1,0 +1,163 @@
+/* styles.css */
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f7fa;
+  color: #24304A;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 48px;
+  background: #0056a0;
+}
+
+.logo img {
+  height: 58px;
+}
+
+nav a {
+  color: #fff;
+  margin-left: 52px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1em;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: rgb(8, 150, 198);
+}
+
+/* Main Section */
+.about-diagonal {
+  position: relative;
+  background: #fff;
+  border-radius: 28px;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 60px auto;
+  min-height: 430px;
+  display: flex;
+  align-items: stretch;
+  box-shadow: 0 4px 24px rgba(36,48,74,0.08);
+}
+
+.about-content {
+  flex: 0 0 60%;
+  padding: 48px 36px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-img {
+  flex: 1 1 40%;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+  /* Puedes ajustar el "20%" para variar el ángulo de la diagonal */
+}
+
+/* Responsive (móvil y tablet) */
+@media (max-width: 950px) {
+  .about-diagonal {
+    flex-direction: column;
+    border-radius: 28px;
+    min-height: 0;
+  }
+  .about-content {
+    flex: 1 1 100%;
+    padding: 28px 12px;
+  }
+  .about-img {
+    flex: 1 1 100%;
+    height: 220px;
+    width: 100%;
+    clip-path: none;
+    border-radius: 0 0 28px 28px;
+  }
+}
+
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    padding: 40px 15px;
+  }
+  
+  .about-card, .about-image {
+    max-width: 100%;
+    min-width: auto;
+  }
+  
+  .about-card {
+    clip-path: none;
+    border-radius: 28px 28px 0 0;
+  }
+  
+  .about-triangle {
+    clip-path: none;
+    border-radius: 0 0 28px 28px;
+    height: 300px;
+  }
+}
+/* Footer */
+footer {
+  background: #24304A;
+  padding: 24px 0;
+  text-align: center;
+}
+
+.social-icons a {
+  margin: 0 16px;
+  display: inline-block;
+}
+.social-icons img {
+  width: 36px;
+  height: 36px;
+  vertical-align: middle;
+  transition: transform 0.2s;
+}
+.social-icons a:hover img {
+  transform: scale(1.12);
+}
+
+@media (max-width: 950px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 40px 0 20px 0;
+  }
+  .about-triangle, .about-card {
+    max-width: 90vw;
+    min-width: unset;
+    width: 90vw;
+  }
+}
+
+@media (max-width: 600px) {
+  header, .about-card, .about-triangle {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .about-card {
+    padding: 24px 12px;
+  }
+  .about-triangle {
+    height: 220px;
+    width: 220px;
+  }
+  .social-icons img {
+    width: 28px;
+    height: 28px;
+  }
+}

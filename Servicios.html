@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SERCOOML | Servicios</title>
+    <link rel="stylesheet" href="CSS/Servicos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+      <div class="logo">
+         <img src="IMG/logo_sercooml.png" alt="SERCOOML Logo">
+      </div>
+      <nav>
+           <a href="Portal.html">Acerca de</a>
+           <a href="Servicios.html">Servicios</a>
+           <a href="#">Contacto</a>
+      </nav>
+    </header>
+    <main>
+    <!-- Hero Slider -->
+<section class="servicios-hero">
+  <div class="slider-servicios">
+    <img src="IMG/servicio1.jpg" class="slide active" alt="Servicio 1">
+    <img src="IMG/servicio2.jpg" class="slide" alt="Servicio 2">
+    <img src="IMG/servicio3.jpg" class="slide" alt="Servicio 3">
+    <div class="slider-overlay"></div>
+    <div class="slider-texto">
+      <h1>Mantenimiento general y Facility Management Profesional en Jalisco</h1>
+      <button id="openMenuServicios">
+        Servicios Disponibles
+      </button>
+    </div>
+  </div>
+</section>
+
+<aside id="menuServicios" class="sidebar-servicios">
+  <button class="close-sidebar" id="closeMenuServicios">&times;</button>
+  <h2>Servicios</h2>
+  <div class="sidebar-category">
+    <button class="sidebar-category-title" type="button">Mantenimiento</button>
+    <ul>
+      <li><a href="#">Mantenimiento general</a></li>
+      <li><a href="#">Facility Management</a></li>
+      <li><a href="#">Plantas de emergencia</a></li>
+      <li><a href="#">Subestaciones eléctricas</a></li>
+    </ul>
+  </div>
+  <div class="sidebar-category">
+    <button class="sidebar-category-title" type="button">Servicios Técnicos</button>
+    <ul>
+      <li><a href="#">Plomería profesional</a></li>
+      <li><a href="#">Instalaciones eléctricas</a></li>
+      <li><a href="#">Aire acondicionado (HVAC)</a></li>
+      <li><a href="#">Láminas y cubiertas</a></li>
+      <li><a href="#">Maquinaria ligera</a></li>
+    </ul>
+  </div>
+  <div class="sidebar-category">
+    <button class="sidebar-category-title" type="button">Limpieza</button>
+    <ul>
+      <li><a href="#">Limpieza de oficinas</a></li>
+      <li><a href="#">Limpieza industrial</a></li>
+      <li><a href="#">Limpieza post-construcción</a></li>
+      <li><a href="#">Limpieza de fachadas y pisos</a></li>
+      <li><a href="#">Cristales en altura</a></li>
+    </ul>
+  </div>
+  <div class="sidebar-category">
+    <button class="sidebar-category-title" type="button">Jardinería y exteriores</button>
+    <ul>
+      <li><a href="#">Diseño y mantenimiento de jardines</a></li>
+      <li><a href="#">Poda y desmalezado</a></li>
+      <li><a href="#">Barrido y recolección de residuos</a></li>
+      <li><a href="#">Lavado de terrazas</a></li>
+    </ul>
+  </div>
+</aside>
+<div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+<section class="descripcion-servicios">
+  <h2>SERVICIOS</h2>
+  <p>
+    “En SERCOOML ofrecemos una amplia variedad de soluciones integrales para mantenimiento, limpieza y construcción, respaldadas por años de experiencia y un equipo altamente capacitado.<br><br>
+    Nuestro compromiso es brindar atención personalizada y eficiente, adaptándonos a las necesidades específicas de cada cliente para garantizar espacios funcionales, seguros y en óptimas condiciones.<br><br>
+    Descubre todos nuestros servicios y encuentra la solución ideal para tu empresa, comercio o residencia.”
+  </p>
+</section>
+
+
+    </main>
+
+    <footer>
+    <div class="social-icons">
+      <a href="#"><img src="IMG/logo_face.png" alt="Facebook"></a>
+      <a href="#"><img src="IMG/logo_insta.png" alt="Instagram"></a>
+      <a href="#"><img src="IMG/logo_x.png" alt="X" width="50px"></a>
+      <a href="#"><img src="IMG/logo_linked.png" alt="LinkedIn"></a>
+     
+    </div>
+  </footer>
+
+<script>
+// Slider automático
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slider-servicios img.slide');
+function showSlide(idx) {
+  slides.forEach((img, i) => img.classList.toggle('active', i === idx));
+}
+setInterval(() => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}, 4000);
+
+// Sidebar menú lateral
+const openBtn = document.getElementById('openMenuServicios');
+const closeBtn = document.getElementById('closeMenuServicios');
+const sidebar = document.getElementById('menuServicios');
+const overlay = document.getElementById('sidebarOverlay');
+
+openBtn.onclick = function() {
+  sidebar.classList.add('open');
+  overlay.classList.add('open');
+};
+closeBtn.onclick = function() {
+  sidebar.classList.remove('open');
+  overlay.classList.remove('open');
+};
+overlay.onclick = function() {
+  sidebar.classList.remove('open');
+  overlay.classList.remove('open');
+};
+
+// Expand/collapse categorías
+const categories = document.querySelectorAll('.sidebar-category-title');
+categories.forEach(btn => {
+  btn.onclick = function() {
+    const cat = btn.parentElement;
+    cat.classList.toggle('open');
+    // Cierra las demás
+    document.querySelectorAll('.sidebar-category').forEach(c => {
+      if (c !== cat) c.classList.remove('open');
+    });
+  }
+});
+// Opcional: abre la primera categoría al cargar
+document.querySelector('.sidebar-category').classList.add('open');
+</script>
+
+
+</body>
+</html>

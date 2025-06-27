@@ -103,66 +103,24 @@ nav a:hover {
 }
 
 /* Sidebar */
-.sidebar-servicios {
-  position: fixed;
-  top: 0; left: -340px;
-  width: 320px;
-  height: 100vh;
-  background: #fff;
-  box-shadow: 2px 0 16px #0002;
-  padding: 32px 24px;
-  z-index: 9999;
-  transition: left 0.33s cubic-bezier(.4,1,.2,1);
-  display: flex;
-  flex-direction: column;
-}
-.sidebar-servicios.open {
-  left: 0;
-}
-.sidebar-servicios .close-sidebar {
-  align-self: flex-end;
+.sidebar-category-title {
+  display: block;
   background: none;
   border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  margin-bottom: 16px;
-  color: #24304A;
-}
-.sidebar-servicios h2 {
-  margin-top: 0;
-  margin-bottom: 18px;
-  color: #24304A;
-  font-size: 1.5rem;
-}
-.sidebar-servicios ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.sidebar-servicios ul li {
-  margin-bottom: 18px;
-}
-.sidebar-servicios ul li a {
   color: #12b7e9;
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1.15em;
+  font-weight: 700;
+  padding: 12px 0;
   text-decoration: none;
+  cursor: pointer;
+  outline: none;
   transition: color 0.2s;
 }
-.sidebar-servicios ul li a:hover {
+.sidebar-category-title:hover {
   color: #0056a0;
   text-decoration: underline;
 }
-.sidebar-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: #0007;
-  z-index: 9998;
-}
-.sidebar-overlay.open {
-  display: block;
-}
+
 
 /* Texto bajo el hero */
 .descripcion-servicios {
@@ -185,61 +143,6 @@ nav a:hover {
   line-height: 1.7;
 }
 
-.sidebar-category {
-  margin-bottom: 18px;
-}
-.sidebar-category-title {
-  background: none;
-  border: none;
-  color: #12b7e9;
-  font-size: 1.08rem;
-  font-weight: 700;
-  padding: 0;
-  margin: 0 0 2px 0;
-  cursor: pointer;
-  outline: none;
-  transition: color 0.2s;
-  display: block;
-}
-.sidebar-category-title:hover { color: #0056a0; }
-.sidebar-category ul {
-  margin: 0 0 0 10px;
-  padding: 0;
-  list-style: none;
-  display: none; /* Oculta por defecto */
-}
-.sidebar-category.open ul {
-  display: block; /* Solo categoría abierta */
-}
-.sidebar-category ul li {
-  margin-bottom: 9px;
-}
-.sidebar-category ul li a {
-  color: #24304A;
-  font-size: 1.01rem;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
-  padding-left: 8px;
-}
-.sidebar-category ul li a:hover {
-  color: #12b7e9;
-  text-decoration: underline;
-}
-
-
-/* Responsive */
-@media (max-width: 800px) {
-  .slider-servicios, .slider-servicios img.slide, .slider-overlay, .slider-texto {
-    height: 220px;
-    min-height: 150px;
-  }
-  .slider-texto h1 { font-size: 1.3rem; }
-  .slider-texto button { font-size: 1rem; padding: 11px 24px; }
-  .descripcion-servicios { padding: 18px 6vw; }
-  .sidebar-servicios { width: 90vw; left: -92vw; }
-  .sidebar-servicios.open { left: 0; }
-}
 
 
 /*Seccion de footer*/
@@ -294,3 +197,55 @@ footer {
     height: 28px;
   }
 }
+
+.sidebar-servicios {
+  position: fixed;
+  top: 0; left: -340px; /* Oculto a la izquierda */
+  width: 320px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: 2px 0 16px #0002;
+  padding: 40px 28px 22px 28px;
+  z-index: 11000;
+  transition: left 0.33s cubic-bezier(.4,1,.2,1);
+  display: flex;
+  flex-direction: column;
+}
+.sidebar-servicios.open { left: 0; }
+.close-sidebar {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #24304A;
+  margin-bottom: 14px;
+}
+
+.sidebar-servicios h2 {
+  margin-top: 0; color: #24304A;
+  font-size: 1.2em; font-weight: 800;
+}
+.sidebar-category-title {
+  display: block;
+  color: #00b7e5;
+  font-size: 1.13em;
+  font-weight: 700;
+  padding: 12px 0;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.sidebar-category-title:hover {
+  color: #0056a0;
+  text-decoration: underline;
+}
+
+/* Overlay oscuro */
+.sidebar-overlay {
+  display: none;
+  position: fixed; left: 0; top: 0;
+  width: 100vw; height: 100vh;
+  background: #0007;
+  z-index: 10999;
+}
+.sidebar-overlay.open { display: block; }

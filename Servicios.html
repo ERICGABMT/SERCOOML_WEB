@@ -19,7 +19,35 @@
            <a href="#">Contacto</a>
       </nav>
     </header>
-    <main>
+
+<!-- Botón para abrir el sidebar (puedes ponerlo donde gustes) 
+<button id="abrirSidebar" class="menu-hamburguesa" aria-label="Abrir menú">
+  <span>&#9776;</span>  ícono de tres líneas 
+</button>-->
+
+<!-- Sidebar flotante (oculto por defecto) -->
+<aside id="menuServicios" class="sidebar-servicios">
+  <button class="close-sidebar" id="closeMenuServicios">&times;</button>
+  <h2>Servicios</h2>
+  <div class="sidebar-category">
+    <a class="sidebar-category-title" href="Mantenimiento.html">Mantenimiento</a>
+  </div>
+  <div class="sidebar-category">
+    <a class="sidebar-category-title" href="ServiciosTecnicos.html">Servicios Técnicos</a>
+  </div>
+  <div class="sidebar-category">
+    <a class="sidebar-category-title" href="limpieza.html">Limpieza</a>
+  </div>
+  <div class="sidebar-category">
+    <a class="sidebar-category-title" href="jardineria.html">Jardinería y exteriores</a>
+  </div>
+</aside>
+<!-- Overlay oscuro para fondo -->
+<div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+
+
+<main>
     <!-- Hero Slider -->
 <section class="servicios-hero">
   <div class="slider-servicios">
@@ -35,50 +63,6 @@
     </div>
   </div>
 </section>
-
-<aside id="menuServicios" class="sidebar-servicios">
-  <button class="close-sidebar" id="closeMenuServicios">&times;</button>
-  <h2>Servicios</h2>
-  <div class="sidebar-category">
-    <button class="sidebar-category-title" type="button">Mantenimiento</button>
-    <ul>
-      <li><a href="#">Mantenimiento general</a></li>
-      <li><a href="#">Facility Management</a></li>
-      <li><a href="#">Plantas de emergencia</a></li>
-      <li><a href="#">Subestaciones eléctricas</a></li>
-    </ul>
-  </div>
-  <div class="sidebar-category">
-    <button class="sidebar-category-title" type="button">Servicios Técnicos</button>
-    <ul>
-      <li><a href="#">Plomería profesional</a></li>
-      <li><a href="#">Instalaciones eléctricas</a></li>
-      <li><a href="#">Aire acondicionado (HVAC)</a></li>
-      <li><a href="#">Láminas y cubiertas</a></li>
-      <li><a href="#">Maquinaria ligera</a></li>
-    </ul>
-  </div>
-  <div class="sidebar-category">
-    <button class="sidebar-category-title" type="button">Limpieza</button>
-    <ul>
-      <li><a href="#">Limpieza de oficinas</a></li>
-      <li><a href="#">Limpieza industrial</a></li>
-      <li><a href="#">Limpieza post-construcción</a></li>
-      <li><a href="#">Limpieza de fachadas y pisos</a></li>
-      <li><a href="#">Cristales en altura</a></li>
-    </ul>
-  </div>
-  <div class="sidebar-category">
-    <button class="sidebar-category-title" type="button">Jardinería y exteriores</button>
-    <ul>
-      <li><a href="#">Diseño y mantenimiento de jardines</a></li>
-      <li><a href="#">Poda y desmalezado</a></li>
-      <li><a href="#">Barrido y recolección de residuos</a></li>
-      <li><a href="#">Lavado de terrazas</a></li>
-    </ul>
-  </div>
-</aside>
-<div id="sidebarOverlay" class="sidebar-overlay"></div>
 
 <section class="descripcion-servicios">
   <h2>SERVICIOS</h2>

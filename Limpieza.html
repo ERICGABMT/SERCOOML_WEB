@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/estilo_base.css">
     <link rel="stylesheet" href="CSS/Subservicios.css">
+    <link rel-="stylesheet" href="CSS/estiloEmergernte.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <title>SERCOOML | Limpieza</title>
 </head>
@@ -102,6 +103,130 @@ overlay.onclick = function() {
   overlay.classList.remove('open');
   abrirBtn.classList.remove('menu-oculto'); // VUELVE a mostrar el botón
 };
+//Seccion de ventanna emergente 
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleccionar todas las cards de servicio
+    const serviceCards = document.querySelectorAll('.servicio-card');
+    
+    // Crear el modal dinámicamente
+    const modal = document.createElement('div');
+    modal.id = 'servicio-modal';
+    modal.className = 'modal';
+    modal.innerHTML = `
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 id="modal-title"></h3>
+            <div class="modal-text">
+                <p id="modal-description"></p>
+            </div>
+            <div class="modal-slider">
+                <div class="slider-container">
+                    <div class="slides-wrapper"></div>
+                    <button class="slider-prev">&#10094;</button>
+                    <button class="slider-next">&#10095;</button>
+                </div>
+                <div class="slider-dots"></div>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(modal);
+    
+    // Datos para cada servicio (puedes personalizar esto)
+    const serviciosData = {
+        'limpieza-de-oficina': {
+            title: 'Limpieza de oficina',
+            description: 'Servicio profesional de limpieza para oficinas que incluye desinfección de áreas comunes, limpieza de escritorios, vaciado de basura y más.',
+            images: ['IMG/Limpieza1.jpg', 'IMG/Limpieza2.jpeg', 'IMG/Limpeza3.jpeg']
+        },
+        'limpieza-industrial': {
+            title: 'Limpieza industrial',
+            description: 'Limpieza especializada para áreas industriales con maquinaria pesada y requerimientos específicos de seguridad.',
+            images: ['IMG/Limpieza2.jpeg', 'IMG/Limpieza1.jpg', 'IMG/Limpieza4.jpeg']
+        },
+        // Agrega más servicios según sea necesario
+    };
+    
+    // Configurar eventos para cada card
+    serviceCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const servicioId = this.getAttribute('data-servicio');
+            const servicio = serviciosData[servicioId] || {
+                title: this.querySelector('h4').textContent,
+                description: 'Descripción detallada del servicio...',
+                images: [this.querySelector('img').src]
+            };
+            
+            // Llenar el modal con la información del servicio
+            document.getElementById('modal-title').textContent = servicio.title;
+            document.getElementById('modal-description').textContent = servicio.description;
+            
+            // Configurar el slider
+            const slidesWrapper = modal.querySelector('.slides-wrapper');
+            const dotsContainer = modal.querySelector('.slider-dots');
+            slidesWrapper.innerHTML = '';
+            dotsContainer.innerHTML = '';
+            
+            servicio.images.forEach((imgSrc, index) => {
+                // Crear slides
+                const slide = document.createElement('div');
+                slide.className = 'slide' + (index === 0 ? ' active' : '');
+                slide.innerHTML = `<img src="${imgSrc}" alt="${servicio.title}">`;
+                slidesWrapper.appendChild(slide);
+                
+                // Crear dots
+                const dot = document.createElement('span');
+                dot.className = 'dot' + (index === 0 ? ' active' : '');
+                dot.dataset.index = index;
+                dotsContainer.appendChild(dot);
+            });
+            
+            // Mostrar el modal
+            modal.style.display = 'block';
+            
+            // Inicializar el slider
+            let currentSlide = 0;
+            const slides = modal.querySelectorAll('.slide');
+            const dots = modal.querySelectorAll('.dot');
+            
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === index);
+                });
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+                currentSlide = index;
+            }
+            
+            // Eventos para los botones del slider
+            modal.querySelector('.slider-prev').addEventListener('click', () => {
+                showSlide((currentSlide - 1 + slides.length) % slides.length);
+            });
+            
+            modal.querySelector('.slider-next').addEventListener('click', () => {
+                showSlide((currentSlide + 1) % slides.length);
+            });
+            
+            // Eventos para los dots
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    showSlide(parseInt(dot.dataset.index));
+                });
+            });
+        });
+    });
+    
+    // Cerrar el modal
+    modal.querySelector('.close-modal').addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+    
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
 
 </script>
 

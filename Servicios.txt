@@ -1,0 +1,69 @@
+<aside id="menuServicios" class="sidebar-servicios">
+  <button class="close-sidebar" id="closeMenuServicios">&times;</button>
+  <h2>Servicios</h2>
+  <div class="sidebar-category">
+    <button class="sidebar-category-title" type="button">Mantenimiento</button>
+    <ul>
+      <li><a href="#">Mantenimiento general</a></li>
+      <li><a href="#">Facility Management</a></li>
+      <li><a href="#">Plantas de emergencia</a></li>
+      <li><a href="#">Subestaciones eléctricas</a></li>
+    </ul>
+  </div>
+  <div class="sidebar-category">
+    <button class="sidebar-category-title" type="button">Servicios Técnicos</button>
+    <ul>
+      <li><a href="#">Plomería profesional</a></li>
+      <li><a href="#">Instalaciones eléctricas</a></li>
+      <li><a href="#">Aire acondicionado (HVAC)</a></li>
+      <li><a href="#">Láminas y cubiertas</a></li>
+      <li><a href="#">Maquinaria ligera</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-category">
+    <button class="sidebar-category-title" type="button">Limpieza</button>
+    <ul>
+      <li><a href="#">Limpieza de oficinas</a></li>
+      <li><a href="#">Limpieza industrial</a></li>
+      <li><a href="#">Limpieza post-construcción</a></li>
+      <li><a href="#">Limpieza de fachadas y pisos</a></li>
+      <li><a href="#">Cristales en altura</a></li>
+    </ul>
+  </div>
+  <div class="sidebar-category">
+    <button class="sidebar-category-title" type="button">Jardinería y exteriores</button>
+    <ul>
+      <li><a href="#">Diseño y mantenimiento de jardines</a></li>
+      <li><a href="#">Poda y desmalezado</a></li>
+      <li><a href="#">Barrido y recolección de residuos</a></li>
+      <li><a href="#">Lavado de terrazas</a></li>
+    </ul>
+  </div>
+</aside>
+<div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+<main>
+  <h2 id="titulo-categoria">Servicios Tecnicos</h2>
+  <div id="grid-servicios" class="servicios-grid">
+    <div class="servicio-card" data-servicio="mantenimiento-general">
+      <img src="IMG/Servicios1.png" alt="Mantenimiento general">
+      <h4>Plomería profesional</h4>
+    </div>
+    <div class="servicio-card" data-servicio="facility-management">
+      <img src="IMG/Servicios2.png" alt="Facility Management">
+      <h4>Instalaciones electricas</h4>
+    </div>
+    <div class="servicio-card" data-servicio="plantas-emergencia">
+      <img src="IMG/Servicios3.png" alt="Plantas de emergencia">
+      <h4>Aire acondicionado (HVAC)</h4>
+    </div>
+    <div class="servicio-card" data-servicio="subestaciones-electricas">
+      <img src="IMG/Servicios4.jpg" alt="Subestaciones eléctricas">
+      <h4>Láminas y cubiertas</h4>
+    </div>
+    <div class="servicio-card" data-servicio="subestaciones-electricas">
+      <img src="IMG/Servicios5.png" alt="Subestaciones eléctricas">
+      <h4>Maquinaria ligera</h4>
+    </div>
+  </div>

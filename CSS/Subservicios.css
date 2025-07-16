@@ -1,4 +1,9 @@
+/*Modificaciones al body*/
 
+.logo_empresa {
+  margin-left: 50px;
+  padding-left: 7px;
+}
 /* Sidebar */
 .sidebar-servicios {
   position: fixed;
@@ -120,8 +125,8 @@
 /*Menu amburguesa*/
 .menu-hamburguesa {
   position: absolute;
-  top: 120px;   /* Ajusta según tu header */
-  left: 30px;  /* Ajusta según el margen de tu layout */
+  top: 30px; 
+  left: 2px;  
   background: none;
   border: none;
   cursor: pointer;

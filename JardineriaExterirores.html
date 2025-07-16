@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/estilo_base.css">
     <link rel="stylesheet" href="CSS/Subservicios.css">
-    <link rel="stylesheet" href="CSS/estiloEmergernte.css-">
+    <link rel="stylesheet" href="CSS/estilo_Emergente.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <title>SERCOOML | Jardinería exteriores</title>
 </head>
@@ -20,14 +20,12 @@
       <a href="Servicios.html">Servicios</a>
       <a href="#">Contacto</a>
     </nav>
-
-
-</header>
-
 <!-- Botón hamburguesa -->
 <button id="abrirSidebar" class="menu-hamburguesa" aria-label="Abrir menú">
   <img src="IMG/Menu.png" alt="menu" width="36">
 </button>
+
+</header>
 
     <!-- Hero Slider -->
 <aside id="menuServicios" class="sidebar-servicios">
@@ -52,20 +50,20 @@
 <main>
   <h2 id="titulo-categoria">Jardineria</h2>
   <div id="grid-servicios" class="servicios-grid">
-    <div class="servicio-card" data-servicio="mantenimiento-general">
-      <img src="IMG/Jarines1.jpg" alt="Mantenimiento general">
+    <div class="servicio-card" data-servicio="Diseño_y_mantenimiento_de_jardines">
+      <img src="IMG/Jarines1.jpg" alt="Diseño y mantenimiento de jardines">
       <h4>Diseño y mantenimiento de jardines</h4>
     </div>
-    <div class="servicio-card" data-servicio="facility-management">
-      <img src="IMG/Jardines2.jpg" alt="Facility Management">
+    <div class="servicio-card" data-servicio="Poda_y_desmalezado">
+      <img src="IMG/Jardines2.jpg" alt="Poda y desmalezado">
       <h4>Poda y desmalezado</h4>
     </div>
-    <div class="servicio-card" data-servicio="plantas-emergencia">
-      <img src="IMG/Jardines3.jpg" alt="Plantas de emergencia">
+    <div class="servicio-card" data-servicio="Barrido_y_recolección_de_residuos">
+      <img src="IMG/Jardines3.jpg" alt="Barrido y recolección de residuos">
       <h4>Barrido y recolección de residuos</h4>
     </div>
-    <div class="servicio-card" data-servicio="subestaciones-electricas">
-      <img src="IMG/Jardines4.jpeg" alt="Subestaciones eléctricas">
+    <div class="servicio-card" data-servicio="Lavado_de_terrazas">
+      <img src="IMG/Jardines4.jpeg" alt="Lavado de terrazas">
       <h4>Lavado de terrazas</h4>
     </div>
   </div>
@@ -128,20 +126,29 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.body.appendChild(modal);
     
-    // Datos para cada servicio (puedes personalizar esto)
+    // Datos para cada servicio 
     const serviciosData = {
-        'limpieza-de-oficina': {
-            title: 'Limpieza de oficina',
-            description: 'Servicio profesional de limpieza para oficinas que incluye desinfección de áreas comunes, limpieza de escritorios, vaciado de basura y más.',
-            images: ['IMG/Limpieza1.jpg', 'IMG/Limpieza2.jpeg', 'IMG/Limpeza3.jpeg']
-        },
-        'limpieza-industrial': {
-            title: 'Limpieza industrial',
-            description: 'Limpieza especializada para áreas industriales con maquinaria pesada y requerimientos específicos de seguridad.',
-            images: ['IMG/Limpieza2.jpeg', 'IMG/Limpieza1.jpg', 'IMG/Limpieza4.jpeg']
-        },
-        // Agrega más servicios según sea necesario
-    };
+    'Diseño_y_mantenimiento_de_jardines': {
+        title: 'Diseño y mantenimiento de jardines',
+        description: 'Ofrecemos servicios completos de diseño paisajístico y mantenimiento continuo de jardines, incluyendo selección de plantas adecuadas para su clima, instalación de sistemas de riego eficientes y programas de fertilización personalizados para mantener sus áreas verdes siempre exuberantes.',
+        images: ['IMG/Jarines1.jpg', 'IMG/Diseño-Jardin-1.jpg', 'IMG/Diseño-Jardin-2.jpg']
+    },
+    'Poda_y_desmalezado': {
+        title: 'Poda y desmalezado',
+        description: 'Servicio profesional de poda de árboles, arbustos y setos para promover su crecimiento saludable, junto con desmalezado completo de áreas verdes para eliminar malezas y mantener un aspecto ordenado y estético en su propiedad.',
+        images: ['IMG/Jardines2.jpg', 'IMG/Poda-1.jpg','IMG/Poda-2.jpg']
+    },
+    'Barrido_y_recolección_de_residuos': {
+        title: 'Barrido y recolección de residuos',
+        description: 'Servicio completo de limpieza exterior que incluye barrido meticuloso de hojas, ramas y otros residuos vegetales, así como recolección y disposición adecuada de los desechos para mantener sus áreas exteriores impecables.',
+        images: ['IMG/Jardines3.jpg', 'IMG/Recole-1.jpg','IMG/Recole-2.jpg']
+    },
+    'Lavado_de_terrazas': {
+        title: 'Lavado de terrazas',
+        description: 'Limpieza profunda de terrazas, patios y áreas pavimentadas utilizando técnicas especializadas que incluyen lavado a presión, eliminación de manchas difíciles y tratamiento de superficies para restaurar su apariencia original.',
+        images: ['IMG/Jardines4.jpeg', 'IMG/Profunda-1.jpg', 'IMG/Profunda-2.jpg']
+    }
+};
     
     // Configurar eventos para cada card
     serviceCards.forEach(card => {

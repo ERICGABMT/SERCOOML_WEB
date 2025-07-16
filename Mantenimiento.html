@@ -6,7 +6,7 @@
     <title>SERCOOML | Mantenimiento</title>
     <link rel="stylesheet" href="CSS/estilo_base.css">
     <link rel="stylesheet" href="CSS/Subservicios.css">
-    <LINK REL="stylesheet" href="CSS/estiloEmergernte.css">
+    <LINK REL="stylesheet" href="CSS/estilo_Emergente.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -20,13 +20,12 @@
       <a href="#">Contacto</a>
     </nav>
 
-
-</header>
-
 <!-- Botón hamburguesa -->
 <button id="abrirSidebar" class="menu-hamburguesa" aria-label="Abrir menú">
   <img src="IMG/Menu.png" alt="menu" width="36">
 </button>
+
+</header>
 
     <!-- Hero Slider principal-->
 <aside id="menuServicios" class="sidebar-servicios">
@@ -57,7 +56,7 @@
       <h4>Mantenimiento general</h4>
     </div>
     <div class="servicio-card" data-servicio="facility-management">
-      <img src="IMG/Facility-management-1.jpg" alt="Facility Management">
+      <img src="IMG/Facility-1.jpg" alt="Facility Management">
       <h4>Facility Management</h4>
     </div>
     <div class="servicio-card" data-servicio="plantas-emergencia">
@@ -128,20 +127,30 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.body.appendChild(modal);
     
-    // Datos para cada servicio (puedes personalizar esto)
-    const serviciosData = {
-        'limpieza-de-oficina': {
-            title: 'Limpieza de oficina',
-            description: 'Servicio profesional de limpieza para oficinas que incluye desinfección de áreas comunes, limpieza de escritorios, vaciado de basura y más.',
-            images: ['IMG/Limpieza1.jpg', 'IMG/Limpieza2.jpeg', 'IMG/Limpeza3.jpeg']
-        },
-        'limpieza-industrial': {
-            title: 'Limpieza industrial',
-            description: 'Limpieza especializada para áreas industriales con maquinaria pesada y requerimientos específicos de seguridad.',
-            images: ['IMG/Limpieza2.jpeg', 'IMG/Limpieza1.jpg', 'IMG/Limpieza4.jpeg']
-        },
-        // Agrega más servicios según sea necesario
-    };
+    // Datos para cada servicio 
+ const serviciosData = {
+    'mantenimiento-general': {
+        title: 'Mantenimiento general',
+        description: 'Servicio integral de mantenimiento preventivo y correctivo para instalaciones, incluyendo revisión de sistemas eléctricos, fontanería, carpintería y estructuras. Realizamos inspecciones periódicas para detectar y solucionar problemas antes de que se conviertan en fallos costosos.',
+        images: ['IMG/Mantenimiento-1.jfif', 'IMG/Mantenimiento-2.jpg', 'IMG/Mantenimiento-3.jpg','IMG/Mantenimiento-4.jpg']
+    },
+    'facility-management': {
+        title: 'Facility Management',
+        description: 'Gestión profesional de instalaciones que optimiza el funcionamiento de todos los sistemas del edificio. Coordinamos servicios de limpieza, seguridad, energía, climatización y TI para garantizar la operatividad continua de su negocio con los más altos estándares de eficiencia.',
+        images: ['IMG/Facility-1.jpg','IMG/Facility-3.jpg','IMG/Facility-2.jpg']
+    },
+    'plantas-emergencia': {
+        title: 'Plantas de emergencia',
+        description: 'Mantenimiento especializado de generadores eléctricos y sistemas de energía de respaldo. Incluye pruebas de funcionamiento, cambio de filtros y aceites, limpieza de componentes y verificación del sistema de transferencia automática para garantizar operatividad durante cortes de energía.',
+        images: ['IMG/Plantas-emergencia-1.jpg', 'IMG/Planta-4.jpg','IMG/Planta-2.jpg', 'IMG/Planta-3.jpg']
+    },
+    'subestaciones-electricas': {
+        title: 'Subestaciones eléctricas',
+        description: 'Servicio técnico cualificado para el mantenimiento de subestaciones eléctricas, incluyendo limpieza de componentes, revisión de conexiones, medición de parámetros eléctricos y termografía para prevenir fallos en el sistema de distribución de energía.',
+        images: ['IMG/Plantas-electricas-1.jpg', 'IMG/Subestacion-2.jpg','IMG/Subestacion-3.jpg']
+    }
+};
+  
     
     // Configurar eventos para cada card
     serviceCards.forEach(card => {

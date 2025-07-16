@@ -29,7 +29,8 @@ nav a {
   transition: color 0.2s;
 }
 nav a:hover {
-  color: rgb(8, 150, 198);
+  color: rgb(74, 209, 209);
+  width: 15px;
 }
 
 /* Main Section */

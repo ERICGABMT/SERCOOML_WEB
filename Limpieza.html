@@ -50,24 +50,24 @@
 <main>
   <h2 id="titulo-categoria">Limpieza</h2>
   <div id="grid-servicios" class="servicios-grid">
-    <div class="servicio-card" data-servicio="mantenimiento-general">
-      <img src="IMG/Limpieza1.jpg" alt="Mantenimiento general">
+    <div class="servicio-card" data-servicio="Limpieza-de-oficina">
+      <img src="IMG/Limpieza1.jpg" alt="Limpieza de oficina">
       <h4>Limpieza de oficina</h4>
     </div>
-    <div class="servicio-card" data-servicio="facility-management">
-      <img src="IMG/Limpieza2.jpeg" alt="Facility Management">
+    <div class="servicio-card" data-servicio="Limpieza-industrial">
+      <img src="IMG/Limpieza2.jpeg" alt="Limpieza industrial">
       <h4>Limpieza industrial</h4>
     </div>
-    <div class="servicio-card" data-servicio="plantas-emergencia">
-      <img src="IMG/Limpeza3.jpeg" alt="Plantas de emergencia">
+    <div class="servicio-card" data-servicio="Limpieza-construcción">
+      <img src="IMG/Limpeza3.jpeg" alt="Limpieza post-construcción">
       <h4>Limpieza post-construcción</h4>
     </div>
-    <div class="servicio-card" data-servicio="subestaciones-electricas">
-      <img src="IMG/Limpieza4.jpeg" alt="Subestaciones eléctricas">
+    <div class="servicio-card" data-servicio="Limpieza-fachadas-pisos">
+      <img src="IMG/Limpieza4.jpeg" alt="Limpieza de fachadas y pisos">
       <h4>Limpieza de fachadas y pisos</h4>
     </div>
-    <div class="servicio-card" data-servicio="subestaciones-electricas">
-      <img src="IMG/Liempieza5.jpeg" alt="Subestaciones eléctricas">
+    <div class="servicio-card" data-servicio="Cristales-altura">
+      <img src="IMG/Limpieza5.jpeg" alt="Cristales en altura">
       <h4>Cristales en altura</h4>
     </div>
   </div>
@@ -130,22 +130,36 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.body.appendChild(modal);
     
-    // Datos para cada servicio (puedes personalizar esto)
+    // Datos para cada servicio 
     const serviciosData = {
-        'limpieza-de-oficina': {
-            title: 'Limpieza de oficina',
-            description: 'Servicio profesional de limpieza para oficinas que incluye desinfección de áreas comunes, limpieza de escritorios, vaciado de basura y más.',
-            images: ['IMG/Limpieza1.jpg', 'IMG/Limpieza2.jpeg', 'IMG/Limpeza3.jpeg']
-        },
-        'limpieza-industrial': {
-            title: 'Limpieza industrial',
-            description: 'Limpieza especializada para áreas industriales con maquinaria pesada y requerimientos específicos de seguridad.',
-            images: ['IMG/Limpieza2.jpeg', 'IMG/Limpieza1.jpg', 'IMG/Limpieza4.jpeg']
-        },
-        // Agrega más servicios según sea necesario
-    };
+    'Limpieza-de-oficina': {
+        title: 'Limpieza de Oficina',
+        description: 'Servicio profesional de limpieza para espacios corporativos que incluye desinfección de áreas comunes, limpieza profunda de escritorios, vaciado de papeleras, sanitización de baños y cocinas. Utilizamos productos ecológicos y técnicas que garantizan un ambiente laboral saludable sin interrumpir las actividades laborales.',
+        images: ['IMG/Limpieza1.jpg', 'IMG/Limpieza-oficina2.jpg', 'IMG/Limpieza-oficina3.jpg']
+    },
+    'Limpieza-industrial': {
+        title: 'Limpieza Industrial',
+        description: 'Limpieza especializada para naves industriales, almacenes y plantas de producción. Incluye desengrase de maquinaria, barrido y fregado de suelos industriales, limpieza de áreas de alto tráfico y eliminación de residuos especiales. Personal capacitado en seguridad industrial y manejo de EPIs.',
+        images: ['IMG/Limpieza2.jpeg', 'IMG/Limpieza-industrial2.jpg', 'IMG/Limpieza-industrial3.jpg']
+    },
+    'Limpieza-construcción': {
+        title: 'Limpieza Post-Construcción',
+        description: 'Servicio exhaustivo de limpieza tras obras que incluye retiro de escombros, eliminación de residuos de construcción, limpieza profunda de pisos y paredes, pulido de superficies y acabados, y limpieza de ventanas y ductos. Preparamos el espacio para la ocupación inmediata.',
+        images: ['IMG/Limpeza3.jpeg', 'IMG/Limpieza-construccion2.jpg', 'IMG/Limpieza-construccion3.jpg']
+    },
+    'Limpieza-fachadas-pisos': {
+        title: 'Limpieza de Fachadas y Pisos',
+        description: 'Limpieza profesional de exteriores mediante técnicas de hidrolavado, chorro de vapor y aplicación de productos específicos para cada material (concreto, mármol, granito, etc.). Eliminamos graffiti, hongos, óxido y contaminación ambiental, devolviendo la apariencia original a las superficies.',
+        images: ['IMG/Limpieza4.jpeg', 'IMG/Limpieza-fachadas2.jpg', 'IMG/Limpieza-fachadas3.jpg']
+    },
+    'Cristales-altura': {
+        title: 'Cristales en Altura',
+        description: 'Limpieza profesional de ventanales, fachadas acristaladas y lucernarios en edificios altos. Personal certificado en trabajos verticales con equipos de seguridad y técnicas especializadas para acceso difícil. Usamos agua desmineralizada y herramientas profesionales para un acabado impecable sin rayones.',
+        images: ['IMG/Limpieza5.jpeg', 'IMG/Cristales-altura-2.jpg', 'IMG/Cristales-altura-3.jpg']
+    }
+}
     
-    // Configurar eventos para cada card
+    // Configuraracion de eventos para el card 
     serviceCards.forEach(card => {
         card.addEventListener('click', function() {
             const servicioId = this.getAttribute('data-servicio');
@@ -155,11 +169,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 images: [this.querySelector('img').src]
             };
             
-            // Llenar el modal con la información del servicio
+            //información del servicio
             document.getElementById('modal-title').textContent = servicio.title;
             document.getElementById('modal-description').textContent = servicio.description;
             
-            // Configurar el slider
+            // Configuracion de slider
             const slidesWrapper = modal.querySelector('.slides-wrapper');
             const dotsContainer = modal.querySelector('.slider-dots');
             slidesWrapper.innerHTML = '';

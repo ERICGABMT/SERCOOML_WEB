@@ -51,24 +51,24 @@
 <main>
   <h2 id="titulo-categoria">Servicios Tecnicos</h2>
   <div id="grid-servicios" class="servicios-grid">
-    <div class="servicio-card" data-servicio="mantenimiento-general">
-      <img src="IMG/Servicios1.png" alt="Mantenimiento general">
+    <div class="servicio-card" data-servicio="Plomería-profesional">
+      <img src="IMG/Servicios1.png" alt="Plomería profesional">
       <h4>Plomería profesional</h4>
     </div>
-    <div class="servicio-card" data-servicio="facility-management">
-      <img src="IMG/Servicios2.png" alt="Facility Management">
+    <div class="servicio-card" data-servicio="Instalaciones-electricas">
+      <img src="IMG/Servicios2.png" alt="Instalaciones electricas">
       <h4>Instalaciones electricas</h4>
     </div>
-    <div class="servicio-card" data-servicio="plantas-emergencia">
-      <img src="IMG/Servicios3.png" alt="Plantas de emergencia">
+    <div class="servicio-card" data-servicio="Aire-acondicionado">
+      <img src="IMG/Servicios3.png" alt="Aire acondicionado">
       <h4>Aire acondicionado (HVAC)</h4>
     </div>
-    <div class="servicio-card" data-servicio="subestaciones-electricas">
-      <img src="IMG/Servicios4.jpg" alt="Subestaciones eléctricas">
+    <div class="servicio-card" data-servicio="Láminas-cubiertas">
+      <img src="IMG/Servicios4.jpg" alt="Láminas y cubiertas">
       <h4>Láminas y cubiertas</h4>
     </div>
-    <div class="servicio-card" data-servicio="subestaciones-electricas">
-      <img src="IMG/Servicios5.png" alt="Subestaciones eléctricas">
+    <div class="servicio-card" data-servicio="Maquinaria-ligera">
+      <img src="IMG/Servicios5.png" alt="Maquinaria ligera">
       <h4>Maquinaria ligera</h4>
     </div>
   </div>
@@ -131,20 +131,50 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.body.appendChild(modal);
     
-    // Datos para cada servicio (puedes personalizar esto)
-    const serviciosData = {
-        'limpieza-de-oficina': {
-            title: 'Limpieza de oficina',
-            description: 'Servicio profesional de limpieza para oficinas que incluye desinfección de áreas comunes, limpieza de escritorios, vaciado de basura y más.',
-            images: ['IMG/Limpieza1.jpg', 'IMG/Limpieza2.jpeg', 'IMG/Limpeza3.jpeg']
-        },
-        'limpieza-industrial': {
-            title: 'Limpieza industrial',
-            description: 'Limpieza especializada para áreas industriales con maquinaria pesada y requerimientos específicos de seguridad.',
-            images: ['IMG/Limpieza2.jpeg', 'IMG/Limpieza1.jpg', 'IMG/Limpieza4.jpeg']
-        },
-        // Agrega más servicios según sea necesario
-    };
+    // Datos para cada servicio 
+ const serviciosData = {
+    'Plomería-profesional': {
+        title: 'Plomería-profesional',
+        description: 'Servicio completo de instalación, mantenimiento y reparación de sistemas hidrosanitarios. Incluye detección y reparación de fugas, desatascos profesionales, instalación de tuberías, sanitarios y sistemas de agua caliente, con materiales de primera calidad.',
+        images: ['IMG/Servicios1.png','IMG/Plomeria-1.png', 'IMG/Plomeria-2.png', 'IMG/Plomeria-3.png', 'IMG/Plomeria-4.png']
+    },
+    'Instalaciones-electricas': {
+        title: 'Instalaciones-electricas',
+        description: 'Instalación y mantenimiento de sistemas eléctricos residenciales, comerciales e industriales. Realizamos cableados estructurados, tableros de distribución, iluminación profesional y cumplimos con todas las normas de seguridad eléctrica. Personal certificado y equipos de última generación.',
+        images: ['IMG/Servicios2.png','IMG/Electricas-1.jpg', 'IMG/Electricas-2.jpg', 'IMG/Electricas-3.jpg']
+    },
+    'Aire-acondicionado': {
+        title: 'Aire-acondicionado',
+        description: 'Servicio especializado en instalación, mantenimiento y reparación de sistemas de climatización. Limpieza profunda de unidades, recarga de refrigerante, reparación de compresores y optimización de sistemas para máximo rendimiento energético. Marcas residenciales e industriales.',
+        images: ['IMG/Servicios3.png','IMG/Aire-1.jpg', 'IMG/Aire-2.jpg', 'IMG/Aire-3.jpg', 'IMG/Aire-4.jpg']
+    },
+    'Láminas-cubiertas': {
+        title: 'Láminas-cubiertas',
+        description: 'Instalación y mantenimiento de cubiertas metálicas, láminas termoacústicas y techos industriales. Trabajos en altura con seguridad industrial, sellado profesional de juntas, reparación de goteras e impermeabilización de techumbres con materiales de alta durabilidad.',
+        images: ['IMG/Servicios4.jpg', 'IMG/Cubiertas-2.jpg', 'IMG/Cubiertas-3.jpg']
+    },
+
+    'Maquinaria-ligera': {
+        title: 'Maquinaria-ligera',
+        description: 'Mantenimiento preventivo y correctivo para maquinaria ligera: compresores, generadores, bombas hidráulicas y equipos de construcción. Lubricación, ajustes, alineación y reparación de componentes mecánicos para garantizar óptimo funcionamiento y prolongar vida útil del equipo.',
+        images: ['IMG/Servicios5.png', 'IMG/Maquinaria-1.jpg', 'IMG/Maquinaria-2.jpg', 'IMG/Maquinaria-3.jpg']
+    }
+};
+
+
+document.querySelectorAll('.servicio-card').forEach(card => {
+    card.addEventListener('click', function() {
+        const servicioId = this.getAttribute('data-servicio');
+        const servicio = serviciosData[servicioId];
+        
+        // Configurar el modal con la información del servicio técnico
+        document.getElementById('modal-title').textContent = servicio.title;
+        document.getElementById('modal-description').textContent = servicio.description;
+        
+        // Configurar el slider (código existente)
+        // ... (mantener el mismo código del slider que ya tienes)
+    });
+});
     
     // Configurar eventos para cada card
     serviceCards.forEach(card => {

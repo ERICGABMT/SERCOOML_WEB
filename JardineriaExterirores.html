@@ -98,7 +98,7 @@ overlay.onclick = function() {
   overlay.classList.remove('open');
   abrirBtn.classList.remove('menu-oculto'); // VUELVE a mostrar el botón
 };
-//Vnetana emergente 
+//Ventana emergente 
 document.addEventListener('DOMContentLoaded', function() {
     // Seleccionar todas las cards de servicio
     const serviceCards = document.querySelectorAll('.servicio-card');
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 };
     
-    // Configurar eventos para cada card
+    // Configuraracion de card
     serviceCards.forEach(card => {
         card.addEventListener('click', function() {
             const servicioId = this.getAttribute('data-servicio');
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('modal-title').textContent = servicio.title;
             document.getElementById('modal-description').textContent = servicio.description;
             
-            // Configurar el slider
+            // Configuración de el slider
             const slidesWrapper = modal.querySelector('.slides-wrapper');
             const dotsContainer = modal.querySelector('.slider-dots');
             slidesWrapper.innerHTML = '';

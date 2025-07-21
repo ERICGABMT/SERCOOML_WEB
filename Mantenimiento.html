@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
 };
   
     
-    // Configurar eventos para cada card
+    // Modal de cards
     serviceCards.forEach(card => {
         card.addEventListener('click', function() {
             const servicioId = this.getAttribute('data-servicio');
@@ -162,24 +162,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 images: [this.querySelector('img').src]
             };
             
-            // Llenar el modal con la información del servicio
+            // Informacion de servicios
             document.getElementById('modal-title').textContent = servicio.title;
             document.getElementById('modal-description').textContent = servicio.description;
             
-            // Configurar el slider
+            // Configuracion de slider
             const slidesWrapper = modal.querySelector('.slides-wrapper');
             const dotsContainer = modal.querySelector('.slider-dots');
             slidesWrapper.innerHTML = '';
             dotsContainer.innerHTML = '';
             
             servicio.images.forEach((imgSrc, index) => {
-                // Crear slides
+                // Creacon slides
                 const slide = document.createElement('div');
                 slide.className = 'slide' + (index === 0 ? ' active' : '');
                 slide.innerHTML = `<img src="${imgSrc}" alt="${servicio.title}">`;
                 slidesWrapper.appendChild(slide);
                 
-                // Crear dots
+                // Creacion dots
                 const dot = document.createElement('span');
                 dot.className = 'dot' + (index === 0 ? ' active' : '');
                 dot.dataset.index = index;

@@ -7,7 +7,7 @@
 /* Sidebar */
 .sidebar-servicios {
   position: fixed;
-  top: 0; left: -340px;
+  top: 0; left: -440px;
   width: 320px;
   height: 100vh;
   background: #fff;
@@ -159,7 +159,7 @@
 }
 .servicio-card {
   background: #e8e8e8;
-  border-radius: 50px/20px;
+  border-radius: 30px;
   box-shadow: 0 2px 8px #0001;
   width: 290px;
   min-height: 260px;
@@ -250,10 +250,11 @@ main {
 }
 footer {
   flex-shrink: 0;
+  color: white;
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   /* Header ajustes */
   h1{
     font-size: 20px;
@@ -306,6 +307,12 @@ footer {
   .descripcion-servicios p {
     font-size: 1em;
   }
+
+  .sidebar-servicios {
+    width: 280px;
+    left: -480px;
+    padding: 32px 20px 20px 20px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -344,7 +351,7 @@ footer {
   /* Sidebar adjustments */
   .sidebar-servicios {
     width: 280px;
-    left: -280px;
+    left: -180px;
     padding: 32px 20px 20px 20px;
   }
-}
+} 

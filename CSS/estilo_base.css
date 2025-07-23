@@ -90,5 +90,18 @@ footer {
   }
 }
 
-/* Agregar estas reglas al final de Servicos.css */
 
+@media (max-width: 430px) {
+
+  .logo img {
+    height: 48px; /* Reducción desde 58px (desktop) */
+  }
+  nav a {
+    font-size: 0.9em; /* Texto más pequeño */
+    margin-left: 24px; /* Menos espacio entre enlaces */
+  }
+
+  header {
+    padding: 14px 20px; /* Menos padding que en desktop (24px 48px) */
+  }
+}

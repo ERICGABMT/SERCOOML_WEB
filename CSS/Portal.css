@@ -65,6 +65,12 @@ nav a:hover {
   /* Puedes ajustar el "20%" para variar el ángulo de la diagonal */
 }
 
+footer{
+  p{
+    color: #fff;
+  }
+}
+
 /* Responsive (móvil y tablet) */
 @media (max-width: 950px) {
   .about-diagonal {
@@ -145,20 +151,103 @@ footer {
 }
 
 @media (max-width: 600px) {
-  header, .about-card, .about-triangle {
-    padding-left: 16px;
-    padding-right: 16px;
+  /* Header ajustes */
+  h1{
+    font-size: 20px;
   }
-  .about-card {
-    padding: 24px 12px;
+  header {
+    padding: 14px 20px;
   }
-  .about-triangle {
+  
+  nav a {
+    margin-left: 24px;
+    font-size: 0.9em;
+  }
+  
+  .logo img {
+    height: 48px;
+  }
+  
+  /*Ajuates Slider*/
+  .slider-servicios {
+    height: 280px;
+  }
+  
+  .slider-servicios img.slide {
+    height: 280px;
+  }
+  
+  .slider-texto h1 {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+  }
+  
+  .slider-texto button {
+    font-size: 1rem;
+    padding: 12px 32px;
+    margin-top: 16px;
+  }
+  
+  /* Content adjustments */
+  .descripcion-servicios {
+    padding: 24px 16px;
+    margin: 24px 16px 0;
+    width: calc(100% - 32px);
+    box-sizing: border-box;
+  }
+  
+  .descripcion-servicios h2 {
+    font-size: 1.4em;
+  }
+  
+  .descripcion-servicios p {
+    font-size: 1em;
+  }
+
+  .sidebar-servicios {
+    width: 280px;
+    left: -480px;
+    padding: 32px 20px 20px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  header {
+    padding: 12px 16px;
+  }
+  
+  nav a {
+    margin-left: 16px;
+    font-size: 0.85em;
+  }
+  
+  .logo img {
+    height: 40px;
+  }
+  
+  .slider-servicios {
     height: 220px;
-    width: 220px;
   }
-  .social-icons img {
-    width: 28px;
-    height: 28px;
+  
+  .slider-servicios img.slide {
+    height: 220px;
+  }
+  
+  .slider-texto h1 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+  
+  .slider-texto button {
+    font-size: 0.9rem;
+    padding: 10px 24px;
+  }
+  
+  /* Sidebar adjustments */
+  .sidebar-servicios {
+    width: 280px;
+    left: -180px;
+    padding: 32px 20px 20px 20px;
   }
 } 
-

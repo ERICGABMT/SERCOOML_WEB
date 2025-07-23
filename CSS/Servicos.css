@@ -39,35 +39,72 @@ nav a:hover {
   margin: 0;
   padding: 0;
 }
+
+/* Slider Container - Ocultar scrollbar pero mantener funcionalidad */
 .slider-servicios {
   position: relative;
   width: 100vw;
+  max-width: 100%;
   height: 380px;
   overflow: hidden;
+  /* Para Firefox */
+  scrollbar-width: none;
+  /* Para IE/Edge */
+  -ms-overflow-style: none;
+  /* Elimina cualquier espacio sobrante */
+  margin: 0;
+  padding: 0;
 }
+
+/* Ocultar scrollbar en Chrome/Safari/Opera */
+.slider-servicios::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+/* Slides - Asegurar que no generen scroll */
 .slider-servicios img.slide {
   position: absolute;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 380px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   opacity: 0;
   transition: opacity 1.2s;
   z-index: 1;
+  /* Eliminar cualquier margen/padding que cause desbordamiento */
+  margin: 0;
+  padding: 0;
 }
+
 .slider-servicios img.active {
   opacity: 1;
   z-index: 2;
 }
+/* Overlay - Ajustar para cubrir completamente */
 .slider-overlay {
   position: absolute;
-  top: 0; left: 0; width: 100vw; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(90deg, #192938cc 40%, #19293844 100%);
   z-index: 3;
+  /* Asegurar que no cause desplazamiento */
+  margin: 0;
+  padding: 0;
 }
+
+/* Texto del slider - Posicionamiento preciso */
 .slider-texto {
   position: absolute;
-  top: 0; left: 0; width: 100vw; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 4;
   display: flex;
   flex-direction: column;
@@ -75,7 +112,10 @@ nav a:hover {
   justify-content: center;
   color: #fff;
   text-align: center;
-  pointer-events: none; /* Solo el botón será clickable */
+  /* Eliminar cualquier espacio interno que cause desbordamiento */
+  margin: 0;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 .slider-texto h1 {
   font-size: 2.5rem;
@@ -124,12 +164,12 @@ nav a:hover {
 
 /* Texto bajo el hero */
 .descripcion-servicios {
-  max-width: 880px;
+  max-width: 1300px;
   background: #fff;
   margin: 32px auto 0 auto;
   border-radius: 18px;
   box-shadow: 0 4px 18px #0001;
-  padding: 40px 32px 32px 32px;
+  padding: 40px 0px 32px 32px;
 }
 .descripcion-servicios h2 {
   margin-top: 0;
@@ -150,6 +190,7 @@ footer {
   background: #24304A;
   padding: 24px 0;
   text-align: center;
+  color: white;
 }
 
 .social-icons a {
@@ -166,41 +207,9 @@ footer {
   transform: scale(1.12);
 }
 
-@media (max-width: 950px) {
-  .about-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    padding: 40px 0 20px 0;
-  }
-  .about-triangle, .about-card {
-    max-width: 90vw;
-    min-width: unset;
-    width: 90vw;
-  }
-}
-
-@media (max-width: 600px) {
-  header, .about-card, .about-triangle {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-  .about-card {
-    padding: 24px 12px;
-  }
-  .about-triangle {
-    height: 220px;
-    width: 220px;
-  }
-  .social-icons img {
-    width: 28px;
-    height: 28px;
-  }
-}
-
 .sidebar-servicios {
   position: fixed;
-  top: 0; left: -340px; /* Oculto a la izquierda */
+  top: 0; left: -440px; /* Oculto a la izquierda */
   width: 320px;
   height: 100vh;
   background: #fff;
@@ -250,7 +259,8 @@ footer {
 }
 .sidebar-overlay.open { display: block; }
 
-@media (max-width: 768px) {
+
+@media (max-width: 600px) {
   /* Header ajustes */
   h1{
     font-size: 20px;
@@ -303,6 +313,12 @@ footer {
   .descripcion-servicios p {
     font-size: 1em;
   }
+
+  .sidebar-servicios {
+    width: 280px;
+    left: -480px;
+    padding: 32px 20px 20px 20px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -341,7 +357,8 @@ footer {
   /* Sidebar adjustments */
   .sidebar-servicios {
     width: 280px;
-    left: -280px;
+    left: -180px;
     padding: 32px 20px 20px 20px;
   }
-}
+} 
+

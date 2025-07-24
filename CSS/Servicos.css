@@ -260,7 +260,7 @@ footer {
 .sidebar-overlay.open { display: block; }
 
 
-@media (max-width: 600px) {
+@media (max-width:820px) and (min-width: 600px) {
   /* Header ajustes */
   h1{
     font-size: 20px;

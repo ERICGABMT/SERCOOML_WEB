@@ -276,7 +276,7 @@ footer {
   height: auto;
 }
 
-@media (max-width:820px) and (min-width: 700px) {
+@media (max-width:920px) and (min-width: 800px) {
   /* Header ajustes */
   h1{
     font-size: 20px;
@@ -337,14 +337,14 @@ footer {
   }
 }
 
-@media (min-width: 180px) and (max-width: 700px){
+@media (min-width: 160px) and (max-width: 800px){
 
   header {
     padding: 7px 10px;
   }
   
   nav a {
-    margin-left: 24px;
+    margin-left: 16px;
     font-size: 0.75em;
   }
   

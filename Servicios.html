@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
     <title>SERCOOML | Servicios</title>
     <link rel="stylesheet" href="CSS/Servicos.css">
+    <link rel="stylesheet" href="CSS/Subservicios.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
@@ -18,12 +19,13 @@
            <a href="Servicios.html">Servicios</a>
            <a href="#">Contacto</a>
       </nav>
-    </header>
 
-<!-- Botón para abrir el sidebar (puedes ponerlo donde gustes) 
-<button id="abrirSidebar" class="menu-hamburguesa" aria-label="Abrir menú">
-  <span>&#9776;</span>  ícono de tres líneas 
-</button>-->
+    
+    <button id="openMenuServicios" class="menu-hamburguesa" aria-label="Abrir menú">
+     <img src="IMG/Menu.png" alt="menu" width="36">
+    </button>
+
+    </header>
 
 <!-- Sidebar flotante  -->
 <aside id="menuServicios" class="sidebar-servicios">
@@ -51,13 +53,14 @@
     <!-- Hero Slider -->
 <section class="servicios-hero">
   <div class="slider-servicios">
-    <img src="IMG/servicio1.jpg" class="slide active" alt="Servicio 1">
-    <img src="IMG/servicio2.jpg" class="slide" alt="Servicio 2">
-    <img src="IMG/servicio3.jpg" class="slide" alt="Servicio 3">
+    <img src="IMG/Electricas-1.jpg" class="slide active" alt="Servicio 1">
+    <img src="IMG/Aire-4.jpg" class="slide" alt="Servicio 2">
+    <img src="IMG/Jardines2.jpg" class="slide" alt="Servicio 3">
+    <img src="IMG/Limpieza2.jpeg" class="slide" alt="Servicio 4">
     <div class="slider-overlay"></div>
     <div class="slider-texto">
       <h1>Mantenimiento general y Facility Management Profesional</h1>
-      <button id="openMenuServicios">
+      <button id="openMenuServicios_B">
         Servicios Disponibles
       </button>
     </div>
@@ -101,24 +104,68 @@ setInterval(() => {
   showSlide(currentSlide);
 }, 4000);
 
-// Sidebar menú lateral
-const openBtn = document.getElementById('openMenuServicios');
-const closeBtn = document.getElementById('closeMenuServicios');
+const abrirBtnHamburguesa = document.getElementById('openMenuServicios');
+const abrirBtnServicios = document.getElementById('openMenuServicios_B');
+const cerrarBtn = document.getElementById('closeMenuServicios');
 const sidebar = document.getElementById('menuServicios');
 const overlay = document.getElementById('sidebarOverlay');
 
-openBtn.onclick = function() {
+// Función para abrir el sidebar
+function abrirSidebar() {
   sidebar.classList.add('open');
   overlay.classList.add('open');
-};
-closeBtn.onclick = function() {
+  document.querySelector('.menu-hamburguesa').classList.add('menu-transparente');
+  if (abrirBtnServicios) {
+    abrirBtnServicios.classList.add('menu-transparente');
+  }
+}
+
+// Función para cerrar el sidebar
+function cerrarSidebar() {
   sidebar.classList.remove('open');
   overlay.classList.remove('open');
-};
-overlay.onclick = function() {
+  document.querySelector('.menu-hamburguesa').classList.remove('menu-transparente');
+  if (abrirBtnServicios) {
+    abrirBtnServicios.classList.remove('menu-transparente');
+  }
+}
+
+// Event listeners
+abrirBtnHamburguesa.onclick = abrirSidebar;
+if (abrirBtnServicios) {
+  abrirBtnServicios.onclick = abrirSidebar;
+}
+cerrarBtn.onclick = cerrarSidebar;
+overlay.onclick = cerrarSidebar;
+
+/*
+// Función compartida para abrir el sidebar
+function abrirSidebar() {
+  const sidebar = document.getElementById('menuServicios');
+  const overlay = document.getElementById('sidebarOverlay');
+  
+  sidebar.classList.add('open');
+  overlay.classList.add('open');
+}
+
+// Asigna la misma función a ambos botones
+document.getElementById('openMenuServicios').onclick = abrirSidebar;
+document.getElementById('openMenuServicios_B').onclick = abrirSidebar;
+
+// Función para cerrar (también compartida)
+function cerrarSidebar() {
+  const sidebar = document.getElementById('menuServicios');
+  const overlay = document.getElementById('sidebarOverlay');
+  
   sidebar.classList.remove('open');
   overlay.classList.remove('open');
-};
+  
+}
+
+// Asigna el cierre al botón de X y al overlay
+document.getElementById('closeMenuServicios').onclick = cerrarSidebar;
+document.getElementById('sidebarOverlay').onclick = cerrarSidebar;
+*/
 
 // Expand/collapse categorías
 const categories = document.querySelectorAll('.sidebar-category-title');

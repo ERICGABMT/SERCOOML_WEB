@@ -64,6 +64,133 @@ nav a:hover {
   clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
   /* Puedes ajustar el "20%" para variar el ángulo de la diagonal */
 }
+/*Seccion de slider y carrucel*/
+/* Hero slider */
+.servicios-hero {
+  width: 100vw;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Slider Container - Ocultar scrollbar pero mantener funcionalidad */
+.slider-servicios {
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  height: 380px;
+  overflow: hidden;
+  /* Para Firefox */
+  scrollbar-width: none;
+  /* Para IE/Edge */
+  -ms-overflow-style: none;
+  /* Elimina cualquier espacio sobrante */
+  margin: 0;
+  padding: 0;
+}
+
+/* Ocultar scrollbar en Chrome/Safari/Opera */
+.slider-servicios::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+/* Slides - Asegurar que no generen scroll */
+.slider-servicios img.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s;
+  z-index: 1;
+  /* Eliminar cualquier margen/padding que cause desbordamiento */
+  margin: 0;
+  padding: 0;
+}
+
+.slider-servicios img.active {
+  opacity: 1;
+  z-index: 2;
+}
+/* Overlay - Ajustar para cubrir completamente */
+.slider-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #192938cc 40%, #19293844 100%);
+  z-index: 3;
+  /* Asegurar que no cause desplazamiento */
+  margin: 0;
+  padding: 0;
+}
+
+/* Texto del slider - Posicionamiento preciso */
+.slider-texto {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  /* Eliminar cualquier espacio interno que cause desbordamiento */
+  margin: 0;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.slider-texto h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 22px;
+  text-shadow: 0 2px 16px #000a;
+  pointer-events: auto;
+}
+.slider-texto button {
+  background: #12b7e9;
+  color: #fff;
+  font-size: 1.3rem;
+  border: none;
+  padding: 16px 40px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 20px;
+  box-shadow: 0 2px 12px #0004;
+  transition: background .2s;
+  pointer-events: auto;
+}
+.slider-texto button:hover {
+  background: #097a9c;
+}
+
+/*Menu amburguesa*/
+.menu-hamburguesa {
+  position: absolute;
+  top: 30px; 
+  left: 2px;  
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10000;
+  padding: 0;
+  display: block;
+}
+.menu-hamburguesa img {
+  width: 38px;
+  height: auto;
+}
 
 footer{
   p{

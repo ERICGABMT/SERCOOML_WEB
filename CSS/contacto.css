@@ -14,7 +14,7 @@
   margin-left: 250px;
 }
 
-.foto-contacto, .qr-contacto {
+.foto-contacto {
   flex: 0 0 220px; /* Ancho fijo para las imágenes */
   height: 160px;
   width: 400px;
@@ -26,9 +26,28 @@
   overflow: hidden;
 }
 
-.imagen-contacto, .imagen-qr {
+.qr-contacto {
+  flex-direction: column;
+  flex: 0 0 220px; /* Ancho fijo para las imágenes */
+  height: 220px;
+  width: 400px;
+  background-color: #e0e0e0; /* Fondo gris más oscuro para el espacio */
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.imagen-contacto {
   max-width: 100%;
   max-height: 100%;
+  object-fit: cover;
+}
+
+.imagen-qr{
+  max-width: 150px;
+  max-height: 220px;
   object-fit: cover;
 }
 
@@ -65,37 +84,35 @@
   transform: scale(1.1);
 }
 
-/* Responsividad */
-@media (max-width: 768px) {
-  .barra-contacto {
-    flex-direction: column;
-    padding: 20px;
-  }
+.btn-color {
   
-  .foto-contacto, .qr-contacto {
-    margin-bottom: 20px;
-    flex: 0 0 100px;
-    height: 100px;
-  }
-  
-  .info-contacto {
-    padding: 0;
-    text-align: center;
-  }
-  
-  .redes-sociales {
-    justify-content: center;
-  }
+  background: #12b7e9;
+  color: #fff;
+  font-size: 0.7rem;
+  border: none;
+  padding: 16px 40px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  box-shadow: 0 2px 12px #0004;
+  transition: background .2s;
+  pointer-events: auto;
 }
 
+.btn-color:hover {
+   background-color: #0056a0;
+}
 /* Responsividad para pantallas medianas (460px - 600px) */
-@media (min-width: 460px) and (max-width: 800px) {
+@media (min-width: 400px) and (max-width: 800px) {
   .barra-contacto {
+    flex-direction: column;
+    margin-bottom: 30px;
     margin-left: 20px; /* Reduce el margen izquierdo */
     margin-right: 20px;
-    width: calc(100% - 60px); /* Ajuste preciso al ancho de pantalla */
+    width: calc(100% - 100px); /* Ajuste preciso al ancho de pantalla */
     padding: 10px;
-    min-height: 180px;
+    min-height: 450px;
   }
 
   .foto-contacto {
@@ -103,9 +120,10 @@
   }
 
    .qr-contacto {
-    flex: 0 0 80px; /* Reduce el tamaño de los contenedores */
-    height: 45px;
-    width: 120px;
+    flex: 0 0 240px; /* Reduce el tamaño de los contenedores */
+    height: 365px;
+    width: 180px;
+    margin-bottom: 30px;
     
   }
 
@@ -127,21 +145,6 @@
   }
 }
 
-/* Responsividad para móviles pequeños (<460px) - Opcional */
-@media (max-width: 459px) {
-  .barra-contacto {
-    margin-left: 10px;
-    margin-right: 10px;
-    width: calc(100% - 20px);
-    flex-direction: column;
-  }
-
-  .foto-contacto, .qr-contacto {
-    width: 100%;
-    flex: none;
-    margin-bottom: 15px;
-  }
-}
 
 .Bienvenida{
     text-align: center;

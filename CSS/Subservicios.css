@@ -394,4 +394,9 @@ footer {
     left: -380px;
     padding: 32px 20px;
   }
+
+  nav a:hover {
+  color: rgb(101, 212, 249);
+  font-size: 15px;
+}
 } 

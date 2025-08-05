@@ -104,4 +104,8 @@ footer {
   header {
     padding: 14px 20px; /* Menos padding que en desktop (24px 48px) */
   }
+
+  nav a:hover {
+  color: rgb(101, 212, 249);
+}
 }

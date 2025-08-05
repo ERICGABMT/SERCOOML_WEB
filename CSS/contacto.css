@@ -106,13 +106,16 @@
 /* Responsividad para pantallas medianas (460px - 600px) */
 @media (min-width: 160px) and (max-width: 800px) {
   .barra-contacto {
+    display: flex;
+    justify-content: center;
     flex-direction: column;
     margin-bottom: 30px;
-    margin-left: 20px; /* Reduce el margen izquierdo */
+    margin-left: 37px; /* Reduce el margen izquierdo */
     margin-right: 20px;
     width: calc(100% - 100px); /* Ajuste preciso al ancho de pantalla */
     padding: 10px;
     min-height: 450px;
+    
   }
 
   .foto-contacto {

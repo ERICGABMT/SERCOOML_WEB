@@ -17,6 +17,7 @@ header {
 
 .logo img {
   height: 58px;
+  left: 200px;
 }
 
 nav a {
@@ -29,6 +30,7 @@ nav a {
 }
 nav a:hover {
   color: rgb(104, 200, 231);
+  font-size: 10px;
 }
 
 /*Seccion de slider y carrucel*/

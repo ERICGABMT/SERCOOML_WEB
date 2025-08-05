@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SERCOOML | Contacto</title>
+    <link rel="stylesheet" href="CSS/Portal.css">
+    <link rel="stylesheet" href="CSS/Subservicios.css">
+    <link rel="stylesheet" href="CSS/contacto.css">
+
+</head>
+<body>
+      <header>
+    <div class="logo">
+      <img src="IMG/MYSLA_LOGO.png" alt="Logo" style="margin-left: 40px;">
+    </div>
+    <nav>
+      <a href="index.html">Acerca de</a>
+      <a href="Servicios.html">Servicios</a>
+      <a href="#">Contacto</a>
+    </nav>
+
+
+
+    <!-- Botón hamburguesa -->
+<button id="abrirSidebar" class="menu-hamburguesa" aria-label="Abrir menú">
+  <img src="IMG/Menu.png" alt="menu" width="36">
+</button>
+
+  </header>
+
+<!-- Sidebar (Menú lateral) -->
+<aside id="menuServicios" class="sidebar-servicios">
+  <button class="close-sidebar" id="closeMenuServicios">&times;</button>
+  <h2>Servicios</h2>
+  <div class="sidebar-category">
+    <a class="sidebar-category-title" href="Mantenimiento.html">Mantenimiento</a>
+  </div>
+  <div class="sidebar-category">
+    <a class="sidebar-category-title" href="ServiciosTecnicos.html">Servicios Técnicos</a>
+  </div>
+  <div class="sidebar-category">
+    <a class="sidebar-category-title" href="Limpieza.html">Limpieza</a>
+  </div>
+  <div class="sidebar-category">
+    <a class="sidebar-category-title" href="JardineriaExterirores.html">Jardinería y exteriores</a>
+  </div>
+</aside>
+
+<!-- Overlay (Fondo oscuro al abrir el sidebar) -->
+<div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+<!-- Barra gris de contacto -->
+<div class="barra-contacto">
+  <div class="foto-contacto">
+    <!-- Espacio para tu imagen (reemplaza el src) -->
+    <img src="IMG/User.png" alt="Foto de contacto" class="imagen-contacto">
+  </div>
+  
+  <div class="info-contacto">
+    <h3>JOSE GABRIEL MARTINEZ RAMIREZ</h3>
+    <p><img src="IMG/identificacion.png" alt="identificacion" style="width: 20px;">  Jefe de mantenimiento</p>
+     <p><img src="IMG/telefono.png" alt="telefono" style="width: 20px;">  No celular: 3111228329</p>
+     <p><img src="IMG/correo.png" alt="correo" style="width: 20px;">  Correo: operaciones2@sercooml.com</p>
+     
+    <div class="redes-sociales">
+    <!--
+      <a href="#"><img src="ruta/icono-facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="ruta/icono-whatsapp.png" alt="WhatsApp"></a>
+      <a href="#"><img src="ruta/icono-linkedin.png" alt="LinkedIn"></a>
+    -->
+    </div>
+  </div>
+  
+  <div class="qr-contacto">
+    <!-- Espacio para tu código QR -->
+    <img src="" alt="Código QR" class="imagen-qr">
+  </div>
+</div>
+
+<!-- Barra gris de contacto -->
+<div class="barra-contacto">
+  <div class="foto-contacto">
+    <!-- Espacio para tu imagen (reemplaza el src) -->
+    <img src="IMG/User.png" alt="Foto de contacto" class="imagen-contacto">
+  </div>
+  
+  <div class="info-contacto">
+    
+    <h3>LUIS CASTAÑEDA GONZALES</h3>
+    <p><img src="IMG/identificacion.png" alt="identificacion" style="width: 20px;">  Técnico de mantenimiento</p>
+     <p><img src="IMG/telefono.png" alt="telefono" style="width: 20px;">  No celular: 3112936222</p>
+     <p><img src="IMG/correo.png" alt="correo" style="width: 20px;">  Correo: operaciones2@sercooml.com</p>
+     
+    <div class="redes-sociales">
+    <!--
+      <a href="#"><img src="ruta/icono-facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="ruta/icono-whatsapp.png" alt="WhatsApp"></a>
+      <a href="#"><img src="ruta/icono-linkedin.png" alt="LinkedIn"></a>
+    -->
+    </div>
+  </div>
+  
+  <div class="qr-contacto">
+    <!-- Espacio para tu código QR -->
+    <img src="ruta/a/tu-qr.png" alt="Código QR" class="imagen-qr">
+  </div>
+</div>
+
+<!--Division de contenededor para formulario de datos-->
+ <!--Reservaciones-->
+    <div class="Bienvenida">
+    <h1> ¡ Puedes registrar tus datos y con gusto contactaremos contigo !</h1>
+    </div>
+    <div class="responsive-form">
+    <!--Formulario-->
+      <form>
+          <!--Nombre-->
+          <label for="nombre">Nombre</label>
+          <input id="nombre" type="text" required>
+          <br>
+          <!--Apellidos-->
+          <label for="apellidos">Apellidos</label>
+          <input id="apellidos" type="text" required>
+          <br>
+
+          <!--Correo electronico-->
+          <label for="telefono">Telefono</label>
+          <input id="telefono" type="text" required>
+          <br>
+
+          <!--Correo electronico-->
+          <label for="correos">Correo</label>
+          <input id="correos" type="text" required>
+          <br>
+          
+         
+          <!--Botones-->
+            <div class="form-btn">
+              <button class="btn-color" onclick="">Registrate</button>
+              <input class="btn-color" type="reset" value="Limpiar">
+            </div>
+            
+          
+    </form>
+    <div class="form-gallery"></div>
+  </div>
+
+<script>
+// Slider automático
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slider-servicios img.slide');
+function showSlide(idx) {
+  slides.forEach((img, i) => img.classList.toggle('active', i === idx));
+}
+setInterval(() => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}, 4000);
+
+const abrirBtn = document.getElementById('abrirSidebar');
+const cerrarBtn = document.getElementById('closeMenuServicios');
+const sidebar = document.getElementById('menuServicios');
+const overlay = document.getElementById('sidebarOverlay');
+
+// ABRIR el sidebar con el botón hamburguesa
+abrirBtn.onclick = function() {
+  sidebar.classList.add('open');
+  overlay.classList.add('open');
+  abrirBtn.classList.add('menu-oculto'); // OCULTA el botón hamburguesa
+};
+
+// CERRAR el sidebar con la X o el overlay
+cerrarBtn.onclick = function() {
+  sidebar.classList.remove('open');
+  overlay.classList.remove('open');
+  abrirBtn.classList.remove('menu-oculto'); // VUELVE a mostrar el botón
+};
+overlay.onclick = function() {
+  sidebar.classList.remove('open');
+  overlay.classList.remove('open');
+  abrirBtn.classList.remove('menu-oculto'); // VUELVE a mostrar el botón
+};
+
+</script>
+  <footer>
+    <div class="social-icons">
+      <a href="#"><img src="IMG/logo_face.png" alt="Facebook"></a>
+      <a href="#"><img src="IMG/logo_insta.png" alt="Instagram" style="width: 50px; height:45px"></a>
+      <a href="#"><img src="IMG/logo_x.png" alt="X"></a>
+      <a href="#"><img src="IMG/logo_linked.png" alt="LinkedIn"></a>
+      <br>
+      <p>SERCOOML &copy; 2025 - Todos los derechos reservados</p>
+    </div>
+  </footer>
+    
+</body>
+</html>

@@ -104,7 +104,7 @@
    background-color: #0056a0;
 }
 /* Responsividad para pantallas medianas (460px - 600px) */
-@media (min-width: 400px) and (max-width: 800px) {
+@media (min-width: 160px) and (max-width: 800px) {
   .barra-contacto {
     flex-direction: column;
     margin-bottom: 30px;

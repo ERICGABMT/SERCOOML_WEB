@@ -1,8 +1,7 @@
 /*Modificaciones al body*/
 
 .logo_empresa {
-  margin-left: 50px;
-  padding-left: 7px;
+  margin-left: 20px;
 }
 /* Sidebar */
 .sidebar-servicios {
@@ -368,6 +367,7 @@ footer {
   
   .logo img {
     height: 40px;
+    
   }
   
   .slider-servicios {
@@ -390,8 +390,8 @@ footer {
   
   /* Sidebar adjustments */
   .sidebar-servicios {
-    width: 230px;
-    left: -380px;
+    width: 240px;
+    left: -280px;
     padding: 32px 20px;
   }
 

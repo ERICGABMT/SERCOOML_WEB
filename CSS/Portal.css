@@ -18,6 +18,7 @@ header {
 
 .logo img {
   height: 58px;
+
 }
 
 nav a {
@@ -367,8 +368,8 @@ footer {
   }
 
   .sidebar-servicios {
-    width: 280px;
-    left: -480px;
+    width: 380px;
+    left: -380px;
     padding: 32px 20px 20px 20px;
   }
 

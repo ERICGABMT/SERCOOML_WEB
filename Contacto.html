@@ -75,7 +75,7 @@
   
    <div class="qr-contacto">
     <!-- Espacio para tu código QR -->
-    <img src="IMG/qr_contacto.png" alt="Código QR" class="imagen-qr">
+    <img src="IMG/Work_Gab.png" alt="Código QR" class="imagen-qr">
     <button class="btn-color" onclick="copyImageToClipboard()">Compartir qr</button>
   </div>
 </div>
@@ -105,7 +105,7 @@
   
   <div class="qr-contacto">
     <!-- Espacio para tu código QR -->
-    <img src="IMG/qr_contacto.png" alt="Código QR" class="imagen-qr">
+    <img src="IMG/Work_Gab.png" alt="Código QR" class="imagen-qr">
     <button class="btn-color" id="qr" onclick="copyImageToClipboard()">Compartir qr</button>
   </div>
  
@@ -195,13 +195,9 @@ overlay.onclick = function() {
  */
 async function copyImageToClipboard() {
     try {
-        // Nombre/ruta de la imagen (ajusta esto según tu estructura de carpetas)
-        const imageName = 'IMG/qr_contacto.png';
-        
-        // Construir la ruta correctamente
+        const imageName = 'IMG/Work_Gab.png';
         const imagePath = new URL(imageName, window.location.href).href;
         
-        // Obtener la imagen
         const response = await fetch(imagePath);
         if (!response.ok) {
             throw new Error(`No se pudo cargar la imagen: ${response.statusText}`);
@@ -209,18 +205,42 @@ async function copyImageToClipboard() {
         
         const blob = await response.blob();
         
-        // Copiar al portapapeles
-        await navigator.clipboard.write([
-            new ClipboardItem({
-                [blob.type]: blob
-            })
-        ]);
+        // Intentar copiar al portapapeles del sistema
+        try {
+            await navigator.clipboard.write([
+                new ClipboardItem({
+                    [blob.type]: blob
+                })
+            ]);
+            alert('¡Imagen copiada al portapapeles correctamente!');
+        } catch (clipboardError) {
+            // Fallback para dispositivos móviles
+            await copyImageMobileFallback(blob, imageName);
+        }
         
-        // Mostrar alerta de éxito
-        alert('¡Imagen copiada al portapapeles correctamente!');
     } catch (error) {
         console.error('Error al copiar la imagen:', error);
-        alert(`Error al copiar la imagen: ${error.message}\n\nAsegúrate que:\n1. La imagen existe en ${imagePath}\n2. Estás usando HTTPS/localhost\n3. Tu navegador soporta esta API (Chrome/Edge recomendado)`);
+        alert(`Error al copiar la imagen: ${error.message}\n\nAsegúrate que:\n1. La imagen existe en ${imagePath}\n2. Estás usando HTTPS/localhost\n3. Tu navegador soporta esta API`);
+    }
+}
+
+// Función de respaldo para dispositivos móviles
+async function copyImageMobileFallback(blob, imageName) {
+    try {
+        // Crear un enlace de descarga temporal
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = imageName;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        
+        alert('¡Imagen descargada! En móvil, la imagen se ha guardado en tu galería. Puedes compartirla manualmente desde allí.');
+        
+    } catch (fallbackError) {
+        throw new Error('No se pudo copiar la imagen. Tu dispositivo podría tener restricciones de seguridad.');
     }
 }
 
